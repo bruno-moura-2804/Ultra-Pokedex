@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Pokédex</title>
+    <link rel="icon" type="image/png" href="assets/icons/pokeball.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ultra Pokédex</h1>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switcher">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <input type="text" id="pokemon-search" placeholder="Digite o nome ou ID do Pokémon..." autocomplete="off">
+                <button id="search-btn"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+
+            <div class="pokedex-display">
+                <div class="loading-animation" id="loading">
+                    <div class="pokeball"></div>
+                    <p>Procurando Pokémon...</p>
+                </div>
+
+                <div class="pokemon-card" id="pokemon-card">
+                    <div class="pokemon-header">
+                        <h2 id="pokemon-name">------</h2>
+                        <span id="pokemon-id">#---</span>
+                    </div>
+
+                    <div class="pokemon-image-container">
+                        <img id="pokemon-image" src="" alt="Pokémon" style="display: none;">
+                        <div class="placeholder-image" id="placeholder-image">?</div>
+                    </div>
+
+                    <div class="pokemon-types" id="pokemon-types">
+                    </div>
+
+                    <div class="pokemon-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Altura</span>
+                            <span class="detail-value" id="pokemon-height">--</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Peso</span>
+                            <span class="detail-value" id="pokemon-weight">--</span>
+                        </div>
+                    </div>
+
+                    <div class="abilities-container">
+                        <h3>Habilidades</h3>
+                        <ul id="pokemon-abilities">
+                        </ul>
+                    </div>
+
+                    <div class="stats-container">
+                        <h3>Estatísticas</h3>
+                        <div class="stats-grid" id="pokemon-stats">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="not-found" id="not-found" style="display: none;">
+                    <i class="fas fa-question-circle"></i>
+                    <h2>Pokémon não encontrado!</h2>
+                    <p>Tente novamente com outro nome ou ID.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 Pokédex | Usando <a href="https://pokeapi.co/" target="_blank">PokéAPI</a> | By Bruno Moura</p> 
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
